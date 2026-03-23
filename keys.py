@@ -2,7 +2,7 @@
 
 import secrets
 from dataclasses import dataclass
-
+from field import mod_inverse
 from curve import EllipticCurve, Point
 
 
@@ -25,7 +25,7 @@ def ecdh_shared_secret(curve: EllipticCurve, my_private: int, their_public: Poin
 
 def ecdsa_sign(curve: EllipticCurve, private_key: int, message_hash: int) -> tuple[int, int]:
     while True:
-        k = 1 _ secrets.randbelow(curve.n - 1) # type: ignore
+        k = 1 + secrets.randbelow(curve.n - 1) # type: ignore
         R = curve.scalar_multiply(k, curve.G)
         r = R.x % curve.n #type: ignore
         if r == 0: continue
