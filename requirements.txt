@@ -6,3 +6,4 @@
 # hashlib   — built-in, needed if you implement ECDSA (message hashing)
 # secrets   — built-in, for cryptographically secure random numbers
 # gmpy2     — optional, faster modular arithmetic for very large primes
+pygame

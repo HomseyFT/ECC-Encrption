@@ -1,2 +1,4 @@
 glossary.py
 __pycache__/
+.aider*
+.venv*
